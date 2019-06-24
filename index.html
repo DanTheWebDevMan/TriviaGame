@@ -1,103 +1,114 @@
 <!DOCTYPE html>
 <head>
     <title>HW 5: Trivia Game</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <link rel= "stylesheet" href="assets/css/reset.css">
+
     <link rel= "stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+    <link href="//cloud.typenetwork.com/projects/2153/fontface.css/" rel="stylesheet" type="text/css">
+
+    
 
 </head>
     <body>
     <div id ="mainContent">
-        <div class="jumbotron jumbotron-fluid">
-            <h1 class="display-4">Totally Trivial Trivia- Theme TBD</h1>
-            </div>
-        <div>
-            <p class="timer">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-            </div>
+        <div class="wrapper">
+            <div class="marvel">Marvel</div>
+            <div class="studios">Trivia Game</div>
+    </div>
 
-            <form name="trivia-questions">
-                <h4>Question 1 goes here.</h4>
-                    <input type="radio" name="trivia" /> Option 1<br />
-                    <input type="radio" name="trivia" /> Option 2<br />
-                    <input type="radio" name="trivia" /> Option 3<br />
-                    <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+    <div class= "questionnaire">
+        <form name="trivia-questions">
+            <h4>Which MCU movie featured Spider-Man’s first appearance?</h4>
+                <input type="radio" name="trivia" /> Spiderman: Homecoming<br />
+                <input type="radio" name="trivia" /> Iron Man 3<br />
+                <input type="radio" name="correct" /> Captain America: Civil War <br />
+                <input type="radio" name="trivia" /> Avengers: Age of Ultron<br />
+            </form>
 
-            <form name="trivia-questions">
-                <h4>Question 1 goes here.</h4>
-                    <input type="radio" name="trivia" /> Option 1<br />
-                    <input type="radio" name="trivia" /> Option 2<br />
-                    <input type="radio" name="trivia" /> Option 3<br />
-                    <input type="radio" name="trivia" /> Option 4<br />
+        <form name="trivia-questions">
+            <h4>What does Stark Industries manufacture in Iron Man 1?</h4>
+                <input type="radio" name="correct" /> Weapons<br />
+                <input type="radio" name="trivia" /> Pharmaceuticals<br />
+                <input type="radio" name="trivia" /> Chemicals<br />
+                <input type="radio" name="trivia" /> Buildings<br />
+            </form>
+
+        <form name="trivia-questions">
+            <h4>Which of these characters did NOT appear in Phase One of the MCU?</h4>
+                <input type="radio" name="trivia" /> Thor<br />
+                <input type="radio" name="trivia" /> Captain America<br />
+                <input type="radio" name="correct" /> Black Widow<br />
+                <input type="radio" name="trivia" /> Black Panther4<br />
                 </form>
 
-            <form name="trivia-questions">
-                <h4>Question 1 goes here.</h4>
-                    <input type="radio" name="trivia" /> Option 1<br />
-                    <input type="radio" name="trivia" /> Option 2<br />
-                    <input type="radio" name="trivia" /> Option 3<br />
-                    <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+        <form name="trivia-questions">
+            <h4>Who played the Hulk before Mark Ruffalo?</h4>
+                <input type="radio" name="trivia" /> Liam Hemsworth<br />
+                <input type="radio" name="correct" /> Edward Norton<br />
+                <input type="radio" name="trivia" /> Will Smith<br />
+                <input type="radio" name="trivia" /> Gary Olman<br />
+            </form>
 
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+        <form name="trivia-questions">
+        <h4>Which war did Captain America fight in?</h4>
+            <input type="radio" name="trivia" /> World War I<br />
+            <input type="radio" name="trivia" /> World War II<br />
+            <input type="radio" name="trivia" /> Vietnam War<br />
+            <input type="radio" name="trivia" /> Iraq War<br />
+            </form>
+            
+        <form name="trivia-questions">
+            <h4>What is the name of Thor’s hammer?</h4>
+                <input type="radio" name="trivia" /> Balder<br />
+                <input type="radio" name="trivia" /> Vanir<br />
+                <input type="radio" name="trivia" /> Aesir<br />
+                <input type="radio" name="correct" /> Mjolnir<br />
+            </form>
 
-                <form name="trivia-questions">
-                <h4>Question 1 goes here.</h4>
-                    <input type="radio" name="trivia" /> Option 1<br />
-                    <input type="radio" name="trivia" /> Option 2<br />
-                    <input type="radio" name="trivia" /> Option 3<br />
-                    <input type="radio" name="trivia" /> Option 4<br />
-                </form>
-                   
+        <form name="trivia-questions">
+            <h4>Which movie takes place during Christmas time?</h4>
+                <input type="radio" name="trivia" />Thor: The Dark World<br />
+                <input type="radio" name="trivia" /> Guardians of the Galaxy<br />
+                <input type="radio" name="correct" /> Iron Man 3<br />
+                <input type="radio" name="trivia" /> Ant-Man<br />
+            </form>
 
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+        <form name="trivia-questions">
+            <h4>What is Peter Quill’s alter ego?</h4>
+                <input type="radio" name="trivia" /> Star Man<br />
+                <input type="radio" name="correct" /> Star-Lord<br />
+                <input type="radio" name="trivia" /> Star Killer<br />
+                <input type="radio" name="trivia" /> Star-Dude<br />
+            </form>
 
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+        <form name="trivia-questions">
+            <h4>What legislation requires superhumans to be governed by law?</h4>
+                <input type="radio" name="trivia" /> Paris Accord<br />
+                <input type="radio" name="trivia" /> Crimea Acoord<br />
+                <input type="radio" name="trivia" /> Aokovia Accord<br />
+                <input type="radio" name="trivia" /> Latveria Accord<br />
+            </form>
 
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
-
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
-
-                <form name="trivia-questions">
-                    <h4>Question 1 goes here.</h4>
-                        <input type="radio" name="trivia" /> Option 1<br />
-                        <input type="radio" name="trivia" /> Option 2<br />
-                        <input type="radio" name="trivia" /> Option 3<br />
-                        <input type="radio" name="trivia" /> Option 4<br />
-                    </form>
+        <form name="trivia-questions">
+            <h4>What Nazi organization infiltrated SHIELD?</h4>
+                <input type="radio" name="trivia" /> Empusa<br />
+                <input type="radio" name="correct" /> Hydra<br />
+                <input type="radio" name="trivia" /> Sphinx<br />
+                <input type="radio" name="trivia" /> Chimera<br />
+            </form>
+        <input type="submit" value="Submit">
         </div>
-        
+    </div>
+
+
+
     </body> 
 </html>
