@@ -1,10 +1,57 @@
 body {     
     background: url("https://www.barraques.cat/imgdirs/big/78/785595_marvel-universe-wallpaper.jpg");
     height: auto;
-    font-size: 20px;
-    font-family: sans-serif;
-    color: #333;
   }
+
+p {
+    text-align: center;
+}
+
+.questionnaire {
+    background-color: white;
+    margin-left: 150px;
+    margin-right: 150px;
+    opacity: .9;
+}
+
+.timer {
+    background-color:red;
+    color: white;
+    margin: 50px;
+    padding: 50px;
+    font-size: 28px;
+    margin: 25px;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+form{
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-left: 10px;
+    text-align: center;
+    background: none;
+}
+
+.options {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color: red;
+}
+
+
+#trivia {
+    text-align: center;
+}
+
+.wrapper { 
+    margin-top: 5%; 
+    }
 
 .marvel { 
   border: solid 1px #fff;
@@ -28,24 +75,5 @@ body {
   text-align: center;
   position: relative;
   margin: 7px 15px 7px 85px;
-  font-size: 30px;
+  font-size: 28px;
 }
-
-.slide{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  .active-slide{
-    opacity: 1;
-    z-index: 2;
-  }
-  .quiz-container{
-    position: relative;
-    height: 200px;
-    margin-top: 40px;
-  }
