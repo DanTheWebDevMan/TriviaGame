@@ -1,5 +1,4 @@
 .jumbotron {
-    background-color: red;
     margin: 25px;
     align-content: center;
 }
@@ -15,6 +14,10 @@ p {
 .container {
     height:auto;
 }
+.timer {
+    background-color: blue;
+    color: white;
+}
 
 form{
     margin: 25px;
@@ -25,4 +28,9 @@ form{
 
 h4 {
     text-align: center;
+}
+
+#trivia {
+    text-align: center;
+    background-color: green;
 }
