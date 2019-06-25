@@ -14,7 +14,7 @@ p {
     opacity: .9;
 }
 
-#timer {
+.timerDiv {
     background-color:red;
     color: white;
     padding: 50px;

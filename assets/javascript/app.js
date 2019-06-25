@@ -6,9 +6,38 @@ click "submit" button to finish OR if the timer runs out
 brought to next page showing you # of correct and incorrect answers */
 
 
+//define global variables/ 
+var correct;
+var incorrect;
 
+//code for timer//
 
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 00 ? "0" + minutes : minutes;
+        seconds = seconds < 60 ? "" + seconds : seconds;
+
+        display.textContent = minutes + "0:" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var sixtySeconds = 60 * 1,
+        display = document.querySelector('#timer');
+    startTimer(sixtySeconds, display);
+};
+
+// .on('click', playgame)
+
+/*
 (function() {
     const myQuestions = [
     {
@@ -179,4 +208,4 @@ function buildQuiz() {
   submitButton.addEventListener("click", showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
-})();
+})(); */
