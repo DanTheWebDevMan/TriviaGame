@@ -14,17 +14,17 @@ p {
     opacity: .9;
 }
 
-.timer {
+#timer {
     background-color:red;
     color: white;
-    margin: 50px;
     padding: 50px;
     font-size: 28px;
-    margin: 25px;
     text-align: center;
-    margin-left: 150px;
-    margin-right: 150px;
-
+    width: 25%;
+    margin: auto auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 200%;
 }
 
 form{
@@ -33,10 +33,11 @@ form{
     padding-left: 10px;
     text-align: center;
     background: none;
+    margin-bottom: 25px;
 }
 
-.options {
-    text-align: center;
+.radio-inline {
+    padding: 5px;
 }
 
 h4 {
@@ -60,20 +61,26 @@ h4 {
   text-align: center;
   color: white;
   background-color: red; 
-  width: 570px; 
+  width: 650px; 
   margin-top: 50px;  
-  font-size: 225px; 
+  font-size: 200px; 
   line-height: .80;
   font-family: "Benton Sans Ex Comp Bla", sans-serif; 
+  opacity: .8;
 }
 
 .studios { 
   font-family: "Orbitron", sans-serif;
   font-weight: bolder;
   color: white;
-  letter-spacing: 50px;
+  background-color: red;
+  border: solid 1px #fff;
+  text-align: center;
+  width: 650px;
+  letter-spacing: 35px;
   text-align: center;
   position: relative;
-  margin: 7px 15px 7px 85px;
+  margin: auto auto;
   font-size: 28px;
+  opacity: .8;
 }

@@ -1,3 +1,14 @@
+/* Pseudocode Brainstorming
+page loads and brought to start page
+game starts when "start" button is clicked
+brought to next page and timer begins from 60 seconds
+click "submit" button to finish OR if the timer runs out
+brought to next page showing you # of correct and incorrect answers */
+
+
+
+
+
 (function() {
     const myQuestions = [
     {
