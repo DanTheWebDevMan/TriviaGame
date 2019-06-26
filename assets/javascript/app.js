@@ -16,7 +16,7 @@ function startTimer(duration, display) {
     var timer = duration, seconds;
     setInterval(function () {
        
-        seconds = parseInt(timer % 60, 10);
+        seconds = parseInt(timer % 30, 10);
 
         seconds = seconds < 60 ? "" + seconds : seconds;
 
@@ -35,9 +35,11 @@ window.onload = function () {
 };
 
 //alert box pops up after 60 seconds saying time's up//
-function timesUp() {
-    setTimeout(function(){ alert("Time's Up!"); }, 3000);
+
+  /*function timesUp() {
+    alert( "Here's your score :" + html(resultsContainer));
   }
+  setTimeout(timesUp, 30000); */ 
 
 //still need code to stop game and bring to results page//
 
@@ -144,10 +146,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
             
             // first reset the list of answers
             answers = [];
-
             // for each available answer...
             for(letter in questions[i].answers){
-
                 // ...add an html radio button
                 answers.push(
                     '<label>'
@@ -164,25 +164,21 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
                 + '<div class="answers">' + answers.join('') + '</div>'
             );
         }
-
         // finally combine our output list into one string of html and put it on the page
         quizContainer.innerHTML = output.join('');
     }
 
 
-    function showResults(questions, quizContainer, resultsContainer){
-        
+    function showResults(questions, quizContainer, resultsContainer){  
         // gather answer containers from our quiz
-        var answerContainers = quizContainer.querySelectorAll('.answers');
-        
+        var answerContainers = quizContainer.querySelectorAll('.answers');        
         // keep track of user's answers
         var userAnswer = '';
-        var numCorrect = 0;
-        
+        var numCorrect = 0;        
         // for each question...
         for(var i=0; i<questions.length; i++){
 
-            // find selected answer
+           // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
             
             // if answer is correct
@@ -201,7 +197,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         }
 
         // show number of correct answers out of total
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        resultsContainer.innerHTML = ' You scored ' + numCorrect + ' out of ' + questions.length;
     }
 
     // show questions right away
@@ -214,3 +210,16 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 }
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function showScores() {
+    var gameOverHTML = "<h1>Result</h1>";
+    gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    var element = document.getElementById("quiz");
+    element.innerHTML = gameOverHTML;
+    alert(showScores);
+};
+
+/* Left to do: 
+create a start page
+redirect page to score when timer is done
+OR have paged redirected once user clicks submit */

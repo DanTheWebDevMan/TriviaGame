@@ -30,6 +30,7 @@ button {
     cursor: pointer;
     margin-bottom: 20px;
     margin-left: 550px;
+    border: solid 1px #fff;
 }
 .timerDiv {
     background-color: black;
@@ -46,6 +47,20 @@ button {
     opacity: .9;
 }
 
+#results {
+    background-color: red;
+    color: white;
+    border-color: white;
+    margin: auto auto;
+    align-content: center;
+    align-items: center;
+    width: 25%;
+    font-size: 32pt;
+    padding-left: 75px;
+    border: solid 1px #fff;
+    margin-bottom: 25px;
+}
+
 form{
     margin-left: 150px;
     margin-right: 150px;
@@ -58,12 +73,6 @@ form{
 .radio-inline {
     padding: 5px;
 }
-
-h4 {
-    text-align: center;
-    color: red;
-}
-
 
 #trivia {
     text-align: center;
