@@ -1,6 +1,6 @@
 /* Pseudocode Brainstorming
-page loads and brought to start page
-game starts when "start" button is clicked
+page loads and brought to start page *still need*
+game starts when "start" button is clicked *still need*
 brought to next page and timer begins from 60 seconds
 click "submit" button to finish OR if the timer runs out
 brought to next page showing you # of correct and incorrect answers */
@@ -13,15 +13,14 @@ var incorrect;
 //code for timer//
 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    var timer = duration, seconds;
     setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
+       
         seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 00 ? "0" + minutes : minutes;
         seconds = seconds < 60 ? "" + seconds : seconds;
 
-        display.textContent = minutes + "0:" + seconds;
+        display.textContent =  "Time left: 00:" + seconds;
 
         if (--timer < 0) {
             timer = duration;
@@ -35,13 +34,17 @@ window.onload = function () {
     startTimer(sixtySeconds, display);
 };
 
-// .on('click', playgame)
+//alert box pops up after 60 seconds saying time's up//
+function timesUp() {
+    setTimeout(function(){ alert("Time's Up!"); }, 3000);
+  }
 
-/*
-(function() {
-    const myQuestions = [
+//still need code to stop game and bring to results page//
+
+
+var myQuestions = [
     {
-        question: "Which MCU movie featured Spider-Man’s first appearance?",
+        question: "Which MCU movie featured Spider-Man's first appearance?",
         answers: {
             a: 'Spiderman: Homecoming',
             b: 'Iron Man 35',
@@ -86,126 +89,128 @@ window.onload = function () {
             correctAnswer: 'c'
     },
     {
-        question: "What is the name of Thor’s hammer?",
+        question: "What is the name of Thor's hammer?",
         answers: {
             a: 'Balder',
             b: 'Vanir',
             c: 'Mjolnir'    
         },
             correctAnswer: 'c'
+    },
+    {
+        question: "Which movie takes place during Christmas time?",
+        answers: {
+            a: 'Thor: The Dark World',
+            b: ' Guardians of the Galaxy',
+            c: 'Iron Man 3'    
+        },
+            correctAnswer: 'c'
+    },
+    {
+        question: "What Nazi organization infiltrated SHIELD?",
+        answers: {
+            a: 'Hydra',
+            b: 'Empusa',
+            c: 'Chimera'    
+        },
+            correctAnswer: 'a'
+    },
+    {
+        question: "What legislation requires superhumans to be governed by law?",
+        answers: {
+            a: 'Aokovia Accord',
+            b: 'Crimea Accord',
+            c: 'Latveria Accord'    
+        },
+            correctAnswer: 'a'
     }
-];
+]; 
 
-function buildQuiz() {
-    // we'll need a place to store the HTML output
-    const output = [];
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
 
-    // for each question...
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-      // we'll want to store the list of answer choices
-      const answers = [];
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
-      // and for each available answer...
-      for (letter in currentQuestion.answers) {
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-             <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-           </label>`
-        );
-      }
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
-      // add this question and its answers to the output
-      output.push(
-        `<div class="slide">
-           <div class="question"> ${currentQuestion.question} </div>
-           <div class="answers"> ${answers.join("")} </div>
-         </div>`
-      );
-    });
+    function showQuestions(questions, quizContainer){
+        // we'll need a place to store the output and the answer choices
+        var output = [];
+        var answers;
 
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join("");
-  }
+        // for each question...
+        for(var i=0; i<questions.length; i++){
+            
+            // first reset the list of answers
+            answers = [];
 
-  function showResults() {
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll(".answers");
+            // for each available answer...
+            for(letter in questions[i].answers){
 
-    // keep track of user's answers
-    let numCorrect = 0;
+                // ...add an html radio button
+                answers.push(
+                    '<label>'
+                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        + letter + ': '
+                        + questions[i].answers[letter]
+                    + '</label>'
+                );
+            }
 
-    // for each question...
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+            // add this question and its answers to the output
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join('') + '</div>'
+            );
+        }
 
-      // if answer is correct
-      if (userAnswer === currentQuestion.correctAnswer) {
-        // add to the number of correct answers
-        numCorrect++;
+        // finally combine our output list into one string of html and put it on the page
+        quizContainer.innerHTML = output.join('');
+    }
 
-        // color the answers green
-        answerContainers[questionNumber].style.color = "lightgreen";
-      } else {
-        // if answer is wrong or blank
-        // color the answers red
-        answerContainers[questionNumber].style.color = "red";
-      }
-    });
 
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
+    function showResults(questions, quizContainer, resultsContainer){
+        
+        // gather answer containers from our quiz
+        var answerContainers = quizContainer.querySelectorAll('.answers');
+        
+        // keep track of user's answers
+        var userAnswer = '';
+        var numCorrect = 0;
+        
+        // for each question...
+        for(var i=0; i<questions.length; i++){
 
-  function showSlide(n) {
-    slides[currentSlide].classList.remove("active-slide");
-    slides[n].classList.add("active-slide");
-    currentSlide = n;
+            // find selected answer
+            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+            
+            // if answer is correct
+            if(userAnswer===questions[i].correctAnswer){
+                // add to the number of correct answers
+                numCorrect++;
+                
+                // color the answers green
+                answerContainers[i].style.color = 'lightgreen';
+            }
+            // if answer is wrong or blank
+            else{
+                // color the answers red
+                answerContainers[i].style.color = 'red';
+            }
+        }
+
+        // show number of correct answers out of total
+        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+    }
+
+    // show questions right away
+    showQuestions(questions, quizContainer);
     
-    if (currentSlide === 0) {
-      previousButton.style.display = "none";
-    } else {
-      previousButton.style.display = "inline-block";
+    // on submit, show results
+    submitButton.onclick = function(){
+        showResults(questions, quizContainer, resultsContainer);
     }
-    
-    if (currentSlide === slides.length - 1) {
-      nextButton.style.display = "none";
-      submitButton.style.display = "inline-block";
-    } else {
-      nextButton.style.display = "inline-block";
-      submitButton.style.display = "none";
-    }
-  }
+}
 
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
-
-  const quizContainer = document.getElementById("quiz");
-  const resultsContainer = document.getElementById("results");
-  const submitButton = document.getElementById("submit");
-
-  // display quiz right away
-  buildQuiz();
-
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-
-  showSlide(0);
-
-  // on submit, show results
-  submitButton.addEventListener("click", showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-})(); */
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
