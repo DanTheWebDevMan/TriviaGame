@@ -33,13 +33,17 @@ window.onload = function () {
         display = document.querySelector('#timer');
     startTimer(sixtySeconds, display);
 };
+   
+
+
 
 //alert box pops up after 60 seconds saying time's up//
 
   /*function timesUp() {
     alert( "Here's your score :" + html(resultsContainer));
   }
-  setTimeout(timesUp, 30000); */ 
+  window.onload
+  setTimeout(timesUp, 30000); */
 
 //still need code to stop game and bring to results page//
 
@@ -206,7 +210,9 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     // on submit, show results
     submitButton.onclick = function(){
         showResults(questions, quizContainer, resultsContainer);
+        alert( "Times up! See Score Below");
     }
+    
 }
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
@@ -220,6 +226,6 @@ function showScores() {
 };
 
 /* Left to do: 
-create a start page
-redirect page to score when timer is done
+create a start page to click on to reveal answers while starting timer
+redirect page to score when timer is done (did an alert instead)
 OR have paged redirected once user clicks submit */
